@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BagLink } from "./bag-link";
 
 export function SiteHeader() {
   return (
@@ -11,7 +12,7 @@ export function SiteHeader() {
           <Link href="/products?category=new-arrivals">New arrivals</Link>
           <Link href="/products?category=kurta-sets">Kurta sets</Link>
         </div>
-        <Link className="bag-link" href="/cart">Bag <span aria-hidden="true">(0)</span></Link>
+        <BagLink />
       </nav>
     </header>
   );
