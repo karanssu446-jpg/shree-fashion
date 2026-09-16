@@ -140,3 +140,12 @@ create policy "Admins can manage all order items"
 -- ========== To make yourself an admin ==========
 -- After signing up once through the site, run:
 -- update profiles set is_admin = true where id = 'your-user-uuid-from-auth.users';
+
+-- ========== PRODUCT IMAGE STORAGE ==========
+-- The admin API uploads through the service-role key; storefront visitors need public read access.
+insert into storage.buckets (id, name, public)
+values ('product-images', 'product-images', true)
+on conflict (id) do update set public = true;
+
+create policy "Anyone can read product images"
+  on storage.objects for select using (bucket_id = 'product-images');
