@@ -11,6 +11,7 @@ export function SiteHeader() {
           <Link href="/products">Shop all</Link>
           <Link href="/products?category=new-arrivals">New arrivals</Link>
           <Link href="/products?category=kurta-sets">Kurta sets</Link>
+          <Link href="/account">Account</Link>
         </div>
         <BagLink />
       </nav>
