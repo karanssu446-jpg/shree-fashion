@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { createClient } from "@/lib/supabase/server";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.shree-fashion.com";
   const supabase = createClient();
   const [{ data: products }, { data: categories }] = await Promise.all([
     supabase.from("products").select("slug, created_at").eq("is_active", true),
