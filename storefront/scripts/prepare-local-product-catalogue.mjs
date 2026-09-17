@@ -39,6 +39,7 @@ for (const row of rows) {
     products.push(currentProduct);
   }
   if (!currentProduct) continue;
+  if (!row["Option1 Value"] && !row["Option2 Value"] && !row["Option3 Value"] && !row["Variant Price"]) continue;
   currentProduct.variants.push({
     option1: row["Option1 Value"], option2: row["Option2 Value"], option3: row["Option3 Value"],
     sku: row["Variant SKU"] || null, price: Number(row["Variant Price"] || 0),
@@ -51,7 +52,7 @@ const preparedProducts = products.map((product) => {
   const localImages = (imagesByProductName.get(normaliseName(product.name)) ?? []).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   const sizeOptionIndex = product.option_names.findIndex((option) => /size/i.test(option));
   const colorOptionIndex = product.option_names.findIndex((option) => /colou?r|shade/i.test(option));
-  const prices = product.variants.map((variant) => variant.price).filter(Number.isFinite);
+  const prices = product.variants.map((variant) => variant.price).filter((price) => Number.isFinite(price) && price > 0);
   const compareAtPrices = product.variants.map((variant) => variant.compare_at_price).filter((value) => value && value > 0);
   return {
     ...product,

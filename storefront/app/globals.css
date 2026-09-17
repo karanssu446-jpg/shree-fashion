@@ -47,3 +47,26 @@ button { font: inherit; cursor: pointer; }
 img { max-width: 100%; }
 button, input, select, textarea { min-height: 42px; }
 @media (max-width: 760px) { .loading-grid { grid-template-columns: repeat(2, 1fr); height: 260px; }.loading-block { height: 170px; }.admin-table { min-width: 680px; }.admin-table-wrap { margin-right: -18px; }.checkout-submit, .admin-form-actions .auth-submit { width: 100%; }.admin-form-actions { flex-direction: column; }.admin-form-actions .secondary-button { width: 100%; } }
+
+.hero { position: relative; overflow: hidden; isolation: isolate; background-image: linear-gradient(90deg, rgba(35,21,21,.63), rgba(35,21,21,.08)), url('/desktop_banner.png'); }
+.hero-content { position: relative; z-index: 5; }
+.hero-models { position: absolute; z-index: 2; inset: 0; pointer-events: none; }
+.hero-model { position: absolute; bottom: -2%; width: clamp(230px, 23vw, 355px); max-width: none; opacity: 0; filter: drop-shadow(0 18px 18px rgba(51, 25, 17, .2)); transform: translateY(110px); animation: model-rise .95s cubic-bezier(.2,.75,.25,1) forwards; }
+.hero-model-one { right: 25%; z-index: 1; animation-delay: .12s; }
+.hero-model-two { right: 8%; z-index: 3; width: clamp(250px, 25vw, 380px); animation-delay: .28s; }
+.hero-model-three { right: 39%; z-index: 2; width: clamp(210px, 21vw, 325px); animation-delay: .44s; }
+.hero-model-four { right: -4%; z-index: 4; width: clamp(245px, 25vw, 380px); animation-delay: .6s; }
+.hero-scroll { position: absolute; z-index: 6; bottom: 25px; left: 7vw; color: rgba(255, 250, 245, .82); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
+.hero-scroll span { display: inline-block; margin-left: 8px; font-size: 16px; }
+@keyframes model-rise { from { opacity: 0; transform: translateY(110px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 760px) {
+	.hero { min-height: 600px; background-image: linear-gradient(90deg, rgba(35,21,21,.6), rgba(35,21,21,.08)), url('/mobile_banner.png'); background-position: center; }
+	.hero-model { bottom: -1%; width: 52vw; }
+	.hero-model-one { right: 22%; z-index: 1; }
+	.hero-model-two { right: -10%; z-index: 2; width: 58vw; }
+	.hero-model-three, .hero-model-four { display: none; }
+	.hero-scroll { left: 26px; bottom: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.hero-model { opacity: 1; transform: none; animation: none; }
+}

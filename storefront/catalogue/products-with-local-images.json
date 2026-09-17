@@ -398,39 +398,9 @@
         "compare_at_price": null,
         "inventory_quantity": 4,
         "available": true
-      },
-      {
-        "option1": "",
-        "option2": "",
-        "option3": "",
-        "sku": null,
-        "price": 0,
-        "compare_at_price": null,
-        "inventory_quantity": 0,
-        "available": true
-      },
-      {
-        "option1": "",
-        "option2": "",
-        "option3": "",
-        "sku": null,
-        "price": 0,
-        "compare_at_price": null,
-        "inventory_quantity": 0,
-        "available": true
-      },
-      {
-        "option1": "",
-        "option2": "",
-        "option3": "",
-        "sku": null,
-        "price": 0,
-        "compare_at_price": null,
-        "inventory_quantity": 0,
-        "available": true
       }
     ],
-    "price": 0,
+    "price": 799,
     "compare_at_price": null,
     "sizes": [
       "m",
@@ -584,19 +554,9 @@
         "compare_at_price": null,
         "inventory_quantity": 5,
         "available": true
-      },
-      {
-        "option1": "",
-        "option2": "",
-        "option3": "",
-        "sku": null,
-        "price": 0,
-        "compare_at_price": null,
-        "inventory_quantity": 0,
-        "available": true
       }
     ],
-    "price": 0,
+    "price": 799,
     "compare_at_price": null,
     "sizes": [
       "l",
@@ -740,29 +700,9 @@
         "compare_at_price": 850,
         "inventory_quantity": 5,
         "available": true
-      },
-      {
-        "option1": "",
-        "option2": "",
-        "option3": "",
-        "sku": null,
-        "price": 0,
-        "compare_at_price": null,
-        "inventory_quantity": 0,
-        "available": true
-      },
-      {
-        "option1": "",
-        "option2": "",
-        "option3": "",
-        "sku": null,
-        "price": 0,
-        "compare_at_price": null,
-        "inventory_quantity": 0,
-        "available": true
       }
     ],
-    "price": 0,
+    "price": 699,
     "compare_at_price": 850,
     "sizes": [
       "m",
@@ -1220,29 +1160,9 @@
         "compare_at_price": null,
         "inventory_quantity": 5,
         "available": true
-      },
-      {
-        "option1": "",
-        "option2": "",
-        "option3": "",
-        "sku": null,
-        "price": 0,
-        "compare_at_price": null,
-        "inventory_quantity": 0,
-        "available": true
-      },
-      {
-        "option1": "",
-        "option2": "",
-        "option3": "",
-        "sku": null,
-        "price": 0,
-        "compare_at_price": null,
-        "inventory_quantity": 0,
-        "available": true
       }
     ],
-    "price": 0,
+    "price": 899,
     "compare_at_price": null,
     "sizes": [
       "m",
@@ -1670,19 +1590,9 @@
         "compare_at_price": null,
         "inventory_quantity": 5,
         "available": true
-      },
-      {
-        "option1": "",
-        "option2": "",
-        "option3": "",
-        "sku": null,
-        "price": 0,
-        "compare_at_price": null,
-        "inventory_quantity": 0,
-        "available": true
       }
     ],
-    "price": 0,
+    "price": 999,
     "compare_at_price": null,
     "sizes": [
       "m",

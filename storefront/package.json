@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "import-products": "node scripts/import-products.mjs",
+    "prepare-local-catalogue": "node scripts/prepare-local-product-catalogue.mjs",
+    "import-local-products": "node scripts/prepare-local-product-catalogue.mjs && node scripts/import-local-products.mjs",
     "export-shopify-catalogue": "node scripts/export-shopify-catalogue.mjs",
     "prepare-local-product-catalogue": "node scripts/prepare-local-product-catalogue.mjs"
   },
