@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
+import { headers } from "next/headers";
 import Razorpay from "razorpay";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
+import { ratelimit } from "@/lib/ratelimit";
 
 const itemSchema = z.object({
   productId: z.string().uuid(),
@@ -31,6 +33,10 @@ function getRazorpay() {
 
 export async function POST(request: Request) {
   try {
+    const ip = headers().get("x-forwarded-for") ?? "unknown";
+    const { success } = await ratelimit.limit(ip);
+    if (!success) return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+
     const supabase = createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: "Please sign in to checkout" }, { status: 401 });

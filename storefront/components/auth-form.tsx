@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FormEvent, useState } from "react";
-import { createClient } from "@/lib/supabase/client";
 
 const safeNext = (value: string | null) => value?.startsWith("/") && !value.startsWith("//") ? value : "/account";
 
@@ -17,15 +16,16 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
     event.preventDefault(); setLoading(true); setMessage("");
     const form = new FormData(event.currentTarget);
     const email = String(form.get("email") || ""); const password = String(form.get("password") || "");
-    const supabase = createClient();
     if (isSignup) {
-      const { data, error } = await supabase.auth.signUp({ email, password, options: { data: { full_name: String(form.get("fullName") || "") }, emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(safeNext(searchParams.get("next")))}` } });
-      if (error) setMessage(error.message);
-      else if (data.session) router.replace(safeNext(searchParams.get("next")));
+      const response = await fetch("/api/auth/signup", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email, password, fullName: String(form.get("fullName") || ""), emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(safeNext(searchParams.get("next")))}` }) });
+      const result = await response.json();
+      if (!response.ok) setMessage(result.error);
+      else if (result.hasSession) router.replace(safeNext(searchParams.get("next")));
       else setMessage("Check your email to confirm your account, then sign in.");
     } else {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-      if (error) setMessage(error.message); else router.replace(safeNext(searchParams.get("next")));
+      const response = await fetch("/api/auth/login", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email, password }) });
+      const result = await response.json();
+      if (!response.ok) setMessage(result.error); else router.replace(safeNext(searchParams.get("next")));
     }
     setLoading(false);
   };
