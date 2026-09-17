@@ -9,19 +9,19 @@ export default async function HomePage() {
   const products = (data ?? []) as Product[];
     return <>
       <section className="hero">
-        <div className="hero-content">
-          <p className="eyebrow">Made for your everyday</p>
-          <h1>Style that feels<br />like you.</h1>
-          <p>Thoughtful silhouettes, beautiful fabrics, and easy elegance for every moment.</p>
-          <Link href="/products" className="button-light">Explore collection</Link>
-        </div>
         <div className="hero-models" aria-hidden="true">
           <img className="hero-model hero-model-one" src="/model_1.png" alt="" />
           <img className="hero-model hero-model-two" src="/model_2.png" alt="" />
           <img className="hero-model hero-model-three" src="/model_3.png" alt="" />
           <img className="hero-model hero-model-four" src="/model_4.png" alt="" />
+          <img className="hero-model hero-model-five" src="/model_5.png" alt="" />
+          <img className="hero-model hero-model-six" src="/model_6.png" alt="" />
+          <img className="hero-model hero-model-seven" src="/model_7.png" alt="" />
+          <img className="hero-model hero-model-eight" src="/model_8.png" alt="" />
+          <img className="hero-model hero-model-nine" src="/model_9.png" alt="" />
+          <img className="hero-model hero-model-ten" src="/model_10.png" alt="" />
+          <img className="hero-model hero-model-eleven" src="/model_11.png" alt="" />
         </div>
-        <span className="hero-scroll">Scroll to discover <span>↓</span></span>
       </section>
       <section className="intro">
         <p className="eyebrow">The Shree edit</p>

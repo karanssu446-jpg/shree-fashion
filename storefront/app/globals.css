@@ -70,3 +70,34 @@ button, input, select, textarea { min-height: 42px; }
 @media (prefers-reduced-motion: reduce) {
 	.hero-model { opacity: 1; transform: none; animation: none; }
 }
+
+/* The supplied banner is the complete hero backdrop; models are the only foreground layer. */
+.hero {
+	min-height: min(650px, 70vw);
+	background: url('/desktop_banner.png') center / cover no-repeat;
+}
+.hero-model {
+	bottom: -3%;
+	width: clamp(135px, 16vw, 235px);
+	filter: drop-shadow(0 14px 14px rgba(51, 25, 17, .18));
+}
+.hero-model-one { right: 88%; z-index: 1; animation-delay: .06s; }
+.hero-model-two { right: 78%; z-index: 2; width: clamp(145px, 17vw, 250px); animation-delay: .12s; }
+.hero-model-three { right: 68%; z-index: 1; animation-delay: .18s; }
+.hero-model-four { right: 58%; z-index: 3; width: clamp(145px, 17vw, 250px); animation-delay: .24s; }
+.hero-model-five { right: 48%; z-index: 2; animation-delay: .3s; }
+.hero-model-six { right: 38%; z-index: 1; width: clamp(145px, 17vw, 250px); animation-delay: .36s; }
+.hero-model-seven { right: 28%; z-index: 3; animation-delay: .42s; }
+.hero-model-eight { right: 18%; z-index: 2; width: clamp(145px, 17vw, 250px); animation-delay: .48s; }
+.hero-model-nine { right: 8%; z-index: 1; animation-delay: .54s; }
+.hero-model-ten { right: -2%; z-index: 3; width: clamp(145px, 17vw, 250px); animation-delay: .6s; }
+.hero-model-eleven { right: 43%; z-index: 4; width: clamp(150px, 18vw, 260px); animation-delay: .66s; }
+@media (max-width: 760px) {
+	.hero { min-height: 560px; background-image: url('/mobile_banner.png'); background-position: center; }
+	.hero-model { width: 39vw; bottom: -1%; }
+	.hero-model-one { right: 64%; }
+	.hero-model-two { right: 42%; width: 42vw; }
+	.hero-model-three { right: 19%; }
+	.hero-model-four { right: -5%; width: 42vw; }
+	.hero-model-five, .hero-model-six, .hero-model-seven, .hero-model-eight, .hero-model-nine, .hero-model-ten, .hero-model-eleven { display: none; }
+}
