@@ -43,15 +43,15 @@ export default async function HomePage() {
         <div className="section-heading"><div><h2>Find your fit</h2></div></div>
         <div className="category-grid">
           <Link href="/products?category=kurta-sets" className="category-tile">
-            <img src="/model_3.webp" alt="Kurta sets" />
+            <img src="/model_3.webp" alt="Kurta sets" loading="lazy" />
             <div className="category-copy"><span>Everyday</span><h3>Kurta sets</h3><em>Shop now</em></div>
           </Link>
           <Link href="/products?category=co-ords" className="category-tile">
-            <img src="/model_6.webp" alt="Co-ord sets" />
+            <img src="/model_6.webp" alt="Co-ord sets" loading="lazy" />
             <div className="category-copy"><span>Easy layering</span><h3>Co-ord sets</h3><em>Shop now</em></div>
           </Link>
           <Link href="/products?category=festive" className="category-tile">
-            <img src="/model_7.webp" alt="Festive wear" />
+            <img src="/model_7.webp" alt="Festive wear" loading="lazy" />
             <div className="category-copy"><span>Occasion wear</span><h3>Festive edit</h3><em>Shop now</em></div>
           </Link>
         </div>
@@ -64,8 +64,8 @@ export default async function HomePage() {
 
       <section className="lookbook">
         <div className="lookbook-images" aria-hidden="true">
-          <img src="/model_5.webp" alt="" />
-          <img src="/model_4.webp" alt="" />
+          <img src="/model_5.webp" alt="" loading="lazy" />
+          <img src="/model_4.webp" alt="" loading="lazy" />
         </div>
         <div className="lookbook-copy">
           <p className="eyebrow">The lookbook</p>

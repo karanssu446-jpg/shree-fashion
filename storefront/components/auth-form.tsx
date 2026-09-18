@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FormEvent, useState } from "react";
+import { createClient } from "@/lib/supabase/client";
 
 const safeNext = (value: string | null) => value?.startsWith("/") && !value.startsWith("//") ? value : "/account";
 
@@ -12,6 +13,23 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const isSignup = mode === "signup";
+  const continueWithGoogle = async () => {
+    setLoading(true);
+    setMessage("");
+    try {
+      const { error } = await createClient().auth.signInWithOAuth({
+        provider: "google",
+        options: { redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(safeNext(searchParams.get("next")))}` },
+      });
+      if (error) {
+        setMessage(error.message);
+        setLoading(false);
+      }
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Unable to continue with Google.");
+      setLoading(false);
+    }
+  };
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault(); setLoading(true); setMessage("");
     const form = new FormData(event.currentTarget);
@@ -29,5 +47,5 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
     }
     setLoading(false);
   };
-  return <section className="auth-page"><div className="auth-card"><p className="eyebrow">Shree Fashion</p><h1>{isSignup ? "Create an account" : "Welcome back"}</h1><p className="auth-intro">{isSignup ? "Create an account to save addresses and track your orders." : "Sign in to manage your orders and continue checkout."}</p><form onSubmit={submit} className="auth-form">{isSignup && <label>Full name<input name="fullName" autoComplete="name" required /></label>}<label>Email address<input name="email" type="email" autoComplete="email" required /></label><label>Password<input name="password" type="password" autoComplete={isSignup ? "new-password" : "current-password"} minLength={6} required /></label>{message && <p className="form-message" role="status">{message}</p>}<button className="auth-submit" disabled={loading}>{loading ? "Please wait…" : isSignup ? "Create account" : "Sign in"}</button></form><p className="auth-switch">{isSignup ? "Already have an account?" : "New to Shree Fashion?"} <Link href={isSignup ? `/account/login?next=${encodeURIComponent(safeNext(searchParams.get("next")))}` : `/account/signup?next=${encodeURIComponent(safeNext(searchParams.get("next")))}`}>{isSignup ? "Sign in" : "Create one"}</Link></p></div></section>;
+  return <section className="auth-page"><div className="auth-card"><p className="eyebrow">Shree Fashion</p><h1>{isSignup ? "Create an account" : "Welcome back"}</h1><p className="auth-intro">{isSignup ? "Create an account to save addresses and track your orders." : "Sign in to manage your orders and continue checkout."}</p><button className="google-button" type="button" onClick={continueWithGoogle} disabled={loading}><img src="/google-icon.svg" alt="" />{loading ? "Please wait…" : "Continue with Google"}</button><div className="auth-divider"><span>or</span></div><form onSubmit={submit} className="auth-form">{isSignup && <label>Full name<input name="fullName" autoComplete="name" required /></label>}<label>Email address<input name="email" type="email" autoComplete="email" required /></label><label>Password<input name="password" type="password" autoComplete={isSignup ? "new-password" : "current-password"} minLength={6} required /></label>{message && <p className="form-message" role="status">{message}</p>}<button className="auth-submit" disabled={loading}>{loading ? "Please wait…" : isSignup ? "Create account" : "Sign in"}</button></form><p className="auth-switch">{isSignup ? "Already have an account?" : "New to Shree Fashion?"} <Link href={isSignup ? `/account/login?next=${encodeURIComponent(safeNext(searchParams.get("next")))}` : `/account/signup?next=${encodeURIComponent(safeNext(searchParams.get("next")))}`}>{isSignup ? "Sign in" : "Create one"}</Link></p></div></section>;
 }
