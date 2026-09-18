@@ -3,6 +3,7 @@ import Script from "next/script";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { CartProvider } from "@/components/cart-provider";
+import { FloatingSocialLinks } from "@/components/floating-social-links";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,5 +20,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><CartProvider><SiteHeader /><main>{children}</main><SiteFooter /></CartProvider><Script async src="https://www.googletagmanager.com/gtag/js?id=G-0XHLXH8MW8" strategy="afterInteractive" /><Script id="google-analytics" strategy="afterInteractive">{"window.dataLayer = window.dataLayer || []; function gtag(){window.dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0XHLXH8MW8');"}</Script></body></html>;
+  return <html lang="en"><body><CartProvider><SiteHeader /><main>{children}</main><SiteFooter /><FloatingSocialLinks /></CartProvider><Script async src="https://www.googletagmanager.com/gtag/js?id=G-0XHLXH8MW8" strategy="afterInteractive" /><Script id="google-analytics" strategy="afterInteractive">{"window.dataLayer = window.dataLayer || []; function gtag(){window.dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0XHLXH8MW8');"}</Script></body></html>;
 }

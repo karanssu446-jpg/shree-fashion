@@ -8,4 +8,4 @@ export const formatPrice = (value: number | string | null | undefined) =>
   }).format(Number(value ?? 0));
 
 export const productImage = (product: Pick<Product, "images">) =>
-  product.images?.[0] || "/product-placeholder.svg";
+  product.images?.[0] || "/product-placeholder.png";
