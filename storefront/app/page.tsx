@@ -10,27 +10,23 @@ export default async function HomePage() {
     return <>
       <section className="hero">
         <div className="hero-models" aria-hidden="true">
-          <img className="hero-model hero-model-1" src="/model_1.png" alt="" />
-          <img className="hero-model hero-model-2" src="/model_2.png" alt="" />
-          <img className="hero-model hero-model-8" src="/model_8.png" alt="" />
-          <img className="hero-model hero-model-9" src="/model_9.png" alt="" />
+          <img className="hero-model hero-model-1" src="/model_1.webp" alt="" />
+          <img className="hero-model hero-model-2" src="/model_2.webp" alt="" />
+          <img className="hero-model hero-model-8" src="/model_8.webp" alt="" />
+          <img className="hero-model hero-model-9" src="/model_7.webp" alt="" />
         </div>
         <div className="hero-foot">
-          <div className="hero-actions">
-            <Link href="/products" className="button-dark">Shop new arrivals <span>→</span></Link>
-            <Link href="/products?category=kurta-sets" className="button-light">Explore kurta sets</Link>
-          </div>
-          <p className="hero-scroll">Scroll to explore <span>↓</span></p>
+          <Link href="/products" className="button-dark">Shop now <span>→</span></Link>
         </div>
       </section>
 
       <div className="trust-strip" aria-hidden="true">
         <div className="trust-track">
-          <span>Complimentary shipping over ₹999</span>
+          <span>Complimentary shipping over ₹1499</span>
           <span>Secure payments via Razorpay</span>
           <span>Easy 7-day returns</span>
           <span>Handpicked fabrics, made to last</span>
-          <span>Complimentary shipping over ₹999</span>
+          <span>Complimentary shipping over ₹1499</span>
           <span>Secure payments via Razorpay</span>
           <span>Easy 7-day returns</span>
           <span>Handpicked fabrics, made to last</span>
@@ -44,18 +40,18 @@ export default async function HomePage() {
       </section>
 
       <section className="category-section">
-        <div className="section-heading"><div><p className="eyebrow">Shop by edit</p><h2>Find your fit</h2></div></div>
+        <div className="section-heading"><div><h2>Find your fit</h2></div></div>
         <div className="category-grid">
           <Link href="/products?category=kurta-sets" className="category-tile">
-            <img src="/model_3.png" alt="Kurta sets" />
+            <img src="/model_3.webp" alt="Kurta sets" />
             <div className="category-copy"><span>Everyday</span><h3>Kurta sets</h3><em>Shop now</em></div>
           </Link>
           <Link href="/products?category=co-ords" className="category-tile">
-            <img src="/model_6.png" alt="Co-ord sets" />
+            <img src="/model_6.webp" alt="Co-ord sets" />
             <div className="category-copy"><span>Easy layering</span><h3>Co-ord sets</h3><em>Shop now</em></div>
           </Link>
           <Link href="/products?category=festive" className="category-tile">
-            <img src="/model_10.png" alt="Festive wear" />
+            <img src="/model_7.webp" alt="Festive wear" />
             <div className="category-copy"><span>Occasion wear</span><h3>Festive edit</h3><em>Shop now</em></div>
           </Link>
         </div>
@@ -68,8 +64,8 @@ export default async function HomePage() {
 
       <section className="lookbook">
         <div className="lookbook-images" aria-hidden="true">
-          <img src="/model_5.png" alt="" />
-          <img src="/model_4.png" alt="" />
+          <img src="/model_5.webp" alt="" />
+          <img src="/model_4.webp" alt="" />
         </div>
         <div className="lookbook-copy">
           <p className="eyebrow">The lookbook</p>

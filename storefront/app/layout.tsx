@@ -9,7 +9,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.shree-fashion.com"),
   title: { default: "Shree Fashion | Everyday Indian Wear", template: "%s | Shree Fashion" },
   description: "Discover elegant ladies' clothing at Shree Fashion.",
-  icons: { icon: "/logo.png", apple: "/logo.png" },
+  icons: {
+    icon: { url: "/favicon.webp", type: "image/webp" },
+  },
   verification: { other: { "msvalidate.01": "5B7CB963C5E3D213D6C24F50D6918579" } },
   alternates: { canonical: "/" },
   openGraph: { type: "website", siteName: "Shree Fashion", title: "Shree Fashion | Everyday Indian Wear", description: "Discover elegant ladies' clothing at Shree Fashion.", url: "/" },

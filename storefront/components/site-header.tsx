@@ -4,7 +4,7 @@ import { BagLink } from "./bag-link";
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <div className="announcement">Complimentary shipping on orders above ₹999</div>
+      <div className="announcement">Complimentary shipping on orders above ₹1499</div>
       <nav className="nav-shell" aria-label="Main navigation">
         <Link className="wordmark" href="/" aria-label="Shree Fashion home">SHREE <span>FASHION</span></Link>
         <div className="nav-links">
