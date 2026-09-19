@@ -34,7 +34,6 @@ export default async function HomePage() {
       </div>
 
       <section className="intro">
-        <p className="eyebrow">The Shree edit</p>
         <h2>Effortless Indian wear</h2>
         <p>Pieces to wear often, love for longer, and make entirely your own.</p>
       </section>
@@ -57,12 +56,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="stat-strip" aria-hidden="true">
-        <div><strong>15k+</strong><span>Happy customers</span></div>
-        <div><strong>500+</strong><span>Curated styles</span></div>
-        <div><strong>4.8★</strong><span>Average rating</span></div>
-        <div><strong>24–48h</strong><span>Dispatch time</span></div>
-      </section>
 
       <section className="collection-section">
         <div className="section-heading"><div><p className="eyebrow">Just in</p><h2>New arrivals</h2></div><Link href="/products">View all <span>→</span></Link></div>
