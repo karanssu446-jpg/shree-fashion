@@ -97,6 +97,16 @@ button { font: inherit; cursor: pointer; }
 .checkout-total { margin-top: 12px; border-bottom: 1px solid #d7c7b9; font-size: 15px; }
 .checkout-back { display: inline-block; margin-top: 30px; }
 @media (max-width: 760px) { .checkout-page { padding: 48px 18px 75px; }.checkout-layout { grid-template-columns: 1fr; gap: 35px; }.checkout-summary { order: -1; padding: 22px; }.checkout-form-panel h1 { margin-bottom: 24px; } }
+.admin-main { min-height: 100vh; background: var(--paper, #fdf8f3); }
+.admin-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 4.5vw; background: var(--ink); color: #fff; }
+.admin-header-brand { color: #fff; font-family: Georgia, serif; font-size: 18px; letter-spacing: .02em; text-decoration: none; }
+.admin-header-brand span { color: var(--wine); font-weight: 600; margin-left: 6px; }
+.admin-header-nav { display: flex; align-items: center; gap: 22px; }
+.admin-header-nav a { color: #e8ddd2; font-size: 13px; text-decoration: none; border-bottom: 1px solid transparent; }
+.admin-header-nav a:hover { border-color: #e8ddd2; }
+.admin-header-nav button { border: 1px solid #6b6058; background: transparent; color: #fff; padding: 8px 14px; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; cursor: pointer; }
+.admin-header-nav button:hover { background: #6b6058; }
+@media (max-width: 760px) { .admin-header { padding: 16px 18px; flex-wrap: wrap; } }
 .admin-page { max-width: 1320px; margin: auto; padding: 70px 4.5vw 110px; }
 .admin-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; padding-bottom: 45px; border-bottom: 1px solid var(--line); }
 .admin-heading h1 { margin: 0 0 10px; font-size: clamp(40px, 5vw, 64px); }
